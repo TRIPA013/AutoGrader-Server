@@ -5,10 +5,8 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry exported="true" kind="lib" path="test/lib/mockito-all-1.9.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Abhinav/GateIn-3.6.0.Final-jbossas7/modules/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Abhinav/GateIn-3.6.0.Final-jbossas7/modules/javax/validation/api/main/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/AutoGrader/lib/javax.persistence-3.0-prelude-embedded-m2.jar"/>
-	<classpathentry kind="lib" path="/AutoGrader/lib/h2-1.4.182.jar"/>
+	<classpathentry kind="lib" path="/AutoGraderFinal/lib/javax.persistence-3.0-prelude-embedded-m2.jar"/>
+	<classpathentry kind="lib" path="D:/CSE5234 Workspace/ejb-api-3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
