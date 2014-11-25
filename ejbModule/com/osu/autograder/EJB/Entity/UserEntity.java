@@ -60,7 +60,7 @@ public class UserEntity implements Serializable{
 	public char getRole() {
 		return Role;
 	}
-	public void setTechnology(char Role) {
+	public void setRole(char Role) {
 		this.Role = Role;
 	}
 	
