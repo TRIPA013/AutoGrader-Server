@@ -5,7 +5,7 @@ import com.osu.autograder.EJB.Entity.CourseEntity;
 
 public class AssignmentGateway {
 	public static String insertAssignment(AssignmentEntity assignment) {
-		return "Insert into Assignment (CourseID,MaxPoints,AssignmentType,ConfigurationFile,Directory) values ("
+		return "Insert into Assignment (CourseID,MaxPoints,AssignmentType,ConfigurationFile,Directory,AssignmentName) values ("
 				+ assignment.getCourseID()
 				+ ","
 				+ assignment.getMaxPoints()
@@ -13,8 +13,10 @@ public class AssignmentGateway {
 				+ assignment.getAssignmentType()
 				+ "','"
 				+ assignment.getConfigurationFile()
-				+ ",'"
-				+ assignment.getDirectory() + "')";
+				+ "','"
+				+ assignment.getDirectory()
+				+ "','"
+				+ assignment.getAssignmentName() + "')";
 
 	}
 
@@ -23,8 +25,9 @@ public class AssignmentGateway {
 				+ ",MaxPoints=" + assignment.getMaxPoints()
 				+ ",AssignmentTyope='" + assignment.getAssignmentType()
 				+ "',ConfigurationFile='" + assignment.getConfigurationFile()
-				+ "',Directory='" + assignment.getDirectory()
-				+ "' where AssignmentID = " + assignment.getAssignmentID();
+				+ "',Directory='" + assignment.getDirectory() + "',AssignmentName='"
+				+ assignment.getAssignmentName() + "' where AssignmentID = "
+				+ assignment.getAssignmentID();
 
 	}
 

@@ -17,6 +17,15 @@ public class AssignmentEntity implements Serializable{
 		this.AssignmentID = AssignmentID;
 	}
 	
+	@Column(name="AssignmentName")
+	private String AssignmentName;
+	
+	public String getAssignmentName() {
+		return AssignmentName;
+	}
+	public void setAssignmentName(String AssignmentName) {
+		this.AssignmentName = AssignmentName;
+	}
 	
 	@Column(name="CourseID")
 	private String CourseID;
