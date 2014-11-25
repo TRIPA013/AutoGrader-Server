@@ -5,34 +5,37 @@ import com.osu.autograder.EJB.Entity.CourseEntity;
 
 public class AssignmentGateway {
 	public static String insertAssignment(AssignmentEntity assignment) {
-		return "Insert into Assignment (CourseID,MaxPoints,AssignmentType,ConfigurationFile) values ("
+		return "Insert into Assignment (CourseID,MaxPoints,AssignmentType,ConfigurationFile,Directory) values ("
 				+ assignment.getCourseID()
 				+ ","
 				+ assignment.getMaxPoints()
 				+ ",'"
 				+ assignment.getAssignmentType()
 				+ "','"
-				+ assignment.getConfigurationFile() + "')";
-		
+				+ assignment.getConfigurationFile()
+				+ ",'"
+				+ assignment.getDirectory() + "')";
+
 	}
 
 	public static String updateAssignment(AssignmentEntity assignment) {
-		return "Update Assignment Set CourseID="
-				+ assignment.getCourseID() + ",MaxPoints="
-				+ assignment.getMaxPoints() + ",AssignmentTyope='"
-				+ assignment.getAssignmentType() + "',ConfigurationFile="
-				+ assignment.getConfigurationFile() + " where AssignmentID = "
-				+ assignment.getAssignmentID();
-		
+		return "Update Assignment Set CourseID=" + assignment.getCourseID()
+				+ ",MaxPoints=" + assignment.getMaxPoints()
+				+ ",AssignmentTyope='" + assignment.getAssignmentType()
+				+ "',ConfigurationFile='" + assignment.getConfigurationFile()
+				+ "',Directory='" + assignment.getDirectory()
+				+ "' where AssignmentID = " + assignment.getAssignmentID();
+
 	}
 
 	public static String deleteAssignment(AssignmentEntity assignment) {
 		return "Delete from Assignment where AssignmentID="
 				+ assignment.getAssignmentID();
-		
+
 	}
 
-	public static String findAssignmentByAssignmentID(AssignmentEntity assignment) {
+	public static String findAssignmentByAssignmentID(
+			AssignmentEntity assignment) {
 
 		return "Select TOP 1 * from Assignment where AssignmentID="
 				+ assignment.getAssignmentID();
