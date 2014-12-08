@@ -5,15 +5,19 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Assignment")
 public class AssignmentEntity implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="AssignmentID")
-	private String AssignmentID;
+	private int AssignmentID;
 	
-	public String getAssignmentID(){
+	public int getAssignmentID(){
 		return this.AssignmentID;
 	}
-	public void setAssignmentID(String AssignmentID){
+	public void setAssignmentID(int AssignmentID){
 		this.AssignmentID = AssignmentID;
 	}
 	

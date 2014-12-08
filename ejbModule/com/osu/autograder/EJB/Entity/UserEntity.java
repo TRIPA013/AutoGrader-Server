@@ -1,12 +1,13 @@
 package com.osu.autograder.EJB.Entity;
 import java.io.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "User")
 public class UserEntity implements Serializable{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="UserID")
 	private String userID;
 	

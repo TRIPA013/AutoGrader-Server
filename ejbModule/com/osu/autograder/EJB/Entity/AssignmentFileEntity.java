@@ -1,12 +1,13 @@
 package com.osu.autograder.EJB.Entity;
 import java.io.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "AssignmentFile")
 public class AssignmentFileEntity implements Serializable{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="AssignmentFileID")
 	private String AssignmentFileID;
 	public String getAssignmentFileID() {
