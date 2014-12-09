@@ -36,8 +36,7 @@ public class AssignmentSession {
 		return assignments;
 	}
 
-	public void grade(CourseEntity courseEntity,
-			AssignmentEntity assignmentEntity) {
+	public void grade(AssignmentEntity assignmentEntity) {
 		String assignmentID = assignmentEntity.getAssignmentID() + "";
 		String courseID = assignmentEntity.getCourseID();
 		File folder = new File(UPLOADS_MAIN_FOLDER + "\\Course" + courseID
