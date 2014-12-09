@@ -10,7 +10,7 @@ import javax.persistence.Query;
 
 import com.osu.autograder.EJB.Entity.CourseEntity;
 import com.osu.autograder.EJB.Entity.UserEntity;
-import com.zzat.autograder.orm.CourseGateway;
+import com.osu.autograder.EJB.orm.CourseGateway;
 
 @Stateless
 public class CourseSession {

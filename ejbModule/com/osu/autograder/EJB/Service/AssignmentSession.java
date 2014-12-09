@@ -1,18 +1,21 @@
 package com.osu.autograder.EJB.Service;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import util.GradingUtil;
+
 import com.osu.autograder.EJB.Entity.AssignmentEntity;
 import com.osu.autograder.EJB.Entity.CourseEntity;
-import com.zzat.autograder.orm.AssignmentGateway;
+import com.osu.autograder.EJB.orm.AssignmentGateway;
 
 @Stateless
 public class AssignmentSession {
@@ -40,12 +43,24 @@ public class AssignmentSession {
 		File folder = new File(UPLOADS_MAIN_FOLDER + "\\Course" + courseID
 				+ "\\Assignment" + assignmentID);
 		File[] listFiles = folder.listFiles();
+		List<File> fileList = new ArrayList<File>();
+		File gradingFile = null;
 		for (File file : listFiles) {
 			if (file.isDirectory()) {
 				System.out.println("Directory: " + file.getName());
-				
+				fileList.add(file);
 			} else {
+				gradingFile = file;
 			}
+		}
+		gradeFiles(fileList, gradingFile);
+	}
+
+	private void gradeFiles(List<File> fileList, File gradingFile) {
+		try {
+			GradingUtil.gradeFiles(fileList, gradingFile);
+		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
 		}
 	}
 

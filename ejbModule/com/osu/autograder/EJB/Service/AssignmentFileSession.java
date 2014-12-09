@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.osu.autograder.EJB.Entity.AssignmentEntity;
 import com.osu.autograder.EJB.Entity.AssignmentFileEntity;
-import com.osu.autograder.EJB.Entity.CourseEntity;
-import com.zzat.autograder.orm.AssignmentFileGateway;
-import com.zzat.autograder.orm.AssignmentGateway;
+import com.osu.autograder.EJB.orm.AssignmentFileGateway;
 
 @Stateless
 public class AssignmentFileSession {

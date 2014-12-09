@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.osu.autograder.EJB.Entity.UserEntity;
-import com.zzat.autograder.orm.UserGateway;
+import com.osu.autograder.EJB.orm.UserGateway;
 
 @Stateless
 public class LoginSession {
@@ -21,7 +21,8 @@ public class LoginSession {
 
 		UserEntity newEntity = user;
 
-		List<UserEntity> users = new ArrayList<UserEntity>();
+		List<UserEntity> users = new 
+				ArrayList<UserEntity>();
 		
 		try {
 			Query query = em.createNativeQuery // create query using this syntax
