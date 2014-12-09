@@ -9,12 +9,12 @@ public class AssignmentFileEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="AssignmentFileID")
-	private String AssignmentFileID;
-	public String getAssignmentFileID() {
+	private int AssignmentFileID;
+	public int getAssignmentFileID() {
 		return AssignmentFileID;
 	}
 
-	public void setAssignmentFileID(String assignmentFileID) {
+	public void setAssignmentFileID(int assignmentFileID) {
 		AssignmentFileID = assignmentFileID;
 	}
 	
