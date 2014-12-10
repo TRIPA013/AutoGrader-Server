@@ -6,6 +6,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "AssignmentFile")
 public class AssignmentFileEntity implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="AssignmentFileID")

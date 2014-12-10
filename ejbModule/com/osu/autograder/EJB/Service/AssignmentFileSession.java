@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import com.osu.autograder.EJB.Entity.AssignmentEntity;
 import com.osu.autograder.EJB.Entity.AssignmentFileEntity;
 import com.osu.autograder.EJB.orm.AssignmentFileGateway;
-
 @Stateless
 public class AssignmentFileSession {
 	@PersistenceContext(unitName = "examples-769-EJB")
@@ -35,9 +36,17 @@ public class AssignmentFileSession {
 		try {
 			em.persist(assignmentFile);
 			em.flush();
-		} catch (Exception e) {
+		} 
+		catch (EntityExistsException e) {
 			return false;
 		}
+		catch (PersistenceException  e) {
+			return false;
+		} 
+		catch (Exception e) {
+			return false;
+		}
+		
 
 		return true;
 	}
@@ -52,6 +61,11 @@ public class AssignmentFileSession {
 			query.executeUpdate();
 			em.flush();
 
+		} catch (EntityExistsException e) {
+			return false;
+		}
+		catch (PersistenceException  e) {
+			return false;
 		} catch (Exception e) {
 			return false;
 		}
