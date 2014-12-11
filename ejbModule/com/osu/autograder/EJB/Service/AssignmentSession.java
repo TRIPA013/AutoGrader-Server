@@ -11,18 +11,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import util.GradingUtil;
-
 import com.osu.autograder.EJB.Entity.AssignmentEntity;
 import com.osu.autograder.EJB.Entity.CourseEntity;
 import com.osu.autograder.EJB.orm.AssignmentGateway;
+import com.osu.autograder.ocr.GradingUtil;
 
 @Stateless
 public class AssignmentSession {
 	@PersistenceContext(unitName = "examples-769-EJB")
 	EntityManager em;
 
-	private static final String UPLOADS_MAIN_FOLDER = "D:////uploads";
+	private static final String UPLOADS_MAIN_FOLDER = "C:////uploads";
 
 	public List<AssignmentEntity> findAssignments(CourseEntity course) {
 
